@@ -1,0 +1,11 @@
+application:
+  name: qovery-simple-example
+  project: project-demo
+  cloud_region: aws/eu-west-3
+  publicly_accessible: true
+routers:
+- name: main
+  routes:
+  - application_name: qovery-simple-example
+    paths:
+    - /*
