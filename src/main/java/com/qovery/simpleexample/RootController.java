@@ -19,7 +19,8 @@ public class RootController {
         return Arrays.asList(
                 new User("Alice", "Smith", 31),
                 new User("John", "Dom", 24),
-                new User("Jack", "Bauer", 54)
+                new User("Jack", "Bauer", 54),
+                new User("Thierry", "Abaléa", 42)
         );
     }
 
