@@ -4,8 +4,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Created by evoxmusic on 02/12/2019.
@@ -14,11 +18,13 @@ import java.util.List;
 @RequestMapping("/")
 public class RootController {
 
-    private static int logCount = 0;
+    private Logger logger = LoggerFactory.getLogger(RootController.class);
+
+    private AtomicInteger logCount = new AtomicInteger();
 
     @GetMapping
     public List<User> listAll() {
-        System.out.println("*** listAll executed: " + logCount++);
+        logger.info("*** listAll executed : " + logCount.getAndIncrement());
         return Arrays.asList(
                 new User("Alice", "Smith", 31),
                 new User("John", "Dom", 24),
