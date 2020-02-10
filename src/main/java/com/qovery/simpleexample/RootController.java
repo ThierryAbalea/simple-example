@@ -24,8 +24,6 @@ public class RootController {
 
     @GetMapping
     public List<User> listAll() {
-        logger.info("QOVERY_BRANCH_NAME: " + System.getenv("QOVERY_BRANCH_NAME"));
-        logger.info("MY_ENV_VAR1: " + System.getenv("MY_ENV_VAR1"));
         logger.info("*** listAll executed : " + logCount.getAndIncrement());
         return Arrays.asList(
                 new User("Alice", "Smith", 31),
