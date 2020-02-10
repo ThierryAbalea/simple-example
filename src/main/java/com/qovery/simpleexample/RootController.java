@@ -14,9 +14,11 @@ import java.util.List;
 @RequestMapping("/")
 public class RootController {
 
+    private static int logCount = 0;
+
     @GetMapping
     public List<User> listAll() {
-        System.out.println("*** listAll executed");
+        System.out.println("*** listAll executed: " + logCount++);
         return Arrays.asList(
                 new User("Alice", "Smith", 31),
                 new User("John", "Dom", 24),
