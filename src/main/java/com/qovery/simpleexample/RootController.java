@@ -16,6 +16,7 @@ public class RootController {
 
     @GetMapping
     public List<User> listAll() {
+        System.out.println("*** listAll executed");
         return Arrays.asList(
                 new User("Alice", "Smith", 31),
                 new User("John", "Dom", 24),
